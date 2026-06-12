@@ -46,7 +46,6 @@
             color: var(--light-text);
         }
 
-        /* Scrollbar Styling */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -64,7 +63,6 @@
             background: var(--light-secondary);
         }
 
-        /* Navbar */
         nav {
             position: fixed;
             top: 0;
@@ -160,7 +158,6 @@
             color: var(--light-text);
         }
 
-        /* Responsive Navbar */
         @media (min-width: 768px) {
             nav .nav-links {
                 display: flex;
@@ -176,7 +173,6 @@
             }
         }
 
-        /* Hero Section */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -313,7 +309,6 @@
             background-color: transparent;
         }
 
-        /* Sections */
         section {
             padding: 5rem 1rem;
         }
@@ -337,11 +332,6 @@
 
         body.light-mode section > .container > p {
             color: var(--light-muted);
-        }
-
-        /* Timeline */
-        .experience-list {
-            display: space-y-12;
         }
 
         .experience-item {
@@ -484,7 +474,6 @@
             font-weight: 500;
         }
 
-        /* Projects Section */
         .projects-bg {
             background-color: var(--dark-secondary);
         }
@@ -630,30 +619,6 @@
             font-weight: 500;
         }
 
-        /* Gallery Placeholder */
-        .gallery-placeholder {
-            background-color: var(--dark-bg);
-            border: 2px dashed rgba(16, 185, 129, 0.3);
-            border-radius: 0.75rem;
-            padding: 4rem 1rem;
-            text-align: center;
-            margin-top: 3rem;
-        }
-
-        body.light-mode .gallery-placeholder {
-            background-color: var(--light-bg);
-        }
-
-        .gallery-placeholder p {
-            margin-bottom: 1rem;
-        }
-
-        .gallery-emoji {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        /* Skills Section */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -711,7 +676,6 @@
             }
         }
 
-        /* Certifications */
         .cert-bg {
             background-color: var(--dark-secondary);
         }
@@ -783,7 +747,6 @@
             color: var(--light-muted);
         }
 
-        /* Contact Section */
         .contact-content {
             max-width: 48rem;
             margin: 0 auto;
@@ -844,7 +807,6 @@
             color: var(--light-muted);
         }
 
-        /* Download CV Section */
         .download-section {
             background-color: var(--dark-secondary);
             border-top: 1px solid rgba(16, 185, 129, 0.4);
@@ -887,7 +849,6 @@
             color: var(--light-muted);
         }
 
-        /* Footer */
         footer {
             background-color: var(--dark-secondary);
             border-top: 1px solid rgba(16, 185, 129, 0.3);
@@ -965,12 +926,10 @@
             color: var(--light-muted);
         }
 
-        /* Smooth Scroll */
         html {
             scroll-behavior: smooth;
         }
 
-        /* Mobile Responsive */
         @media (max-width: 640px) {
             section {
                 padding: 3rem 1rem;
@@ -1000,41 +959,6 @@
             .certifications-grid {
                 grid-template-columns: 1fr;
             }
-
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-top {
-                flex-direction: column-reverse;
-            }
-        }
-
-        /* Animations */
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateX(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        .section-item {
-            animation: slideIn 0.6s ease-out forwards;
-        }
-
-        .scroll-reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-
-        .scroll-reveal.revealed {
-            opacity: 1;
-            transform: translateY(0);
         }
     </style>
 </head>
@@ -1042,212 +966,409 @@
     <!-- Navbar -->
     <nav>
         <div class="container">
-            <div class="logo">Ramón.</div>
+            <div class="logo">Ramón</div>
             <div class="nav-links">
-                <a href="#inicio">Inicio</a>
+                <a href="#sobre-mi">Sobre Mí</a>
                 <a href="#experiencia">Experiencia</a>
                 <a href="#proyectos">Proyectos</a>
+                <a href="#habilidades">Habilidades</a>
+                <a href="#certificaciones">Certificaciones</a>
                 <a href="#contacto">Contacto</a>
             </div>
             <div class="mobile-menu">
-                <button class="theme-toggle" onclick="toggleTheme()">☀️</button>
-                <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+                <button class="theme-toggle" id="themeToggle">🌙</button>
+                <button class="menu-toggle" id="menuToggle">☰</button>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero" id="inicio">
+    <section class="hero">
         <div class="hero-content">
-            <div class="hero-badge">📍 Mexicali, Baja California</div>
-            <h1>Transformo <span class="mint">marcas</span> en <span class="purple">resultados</span></h1>
-            <p>Especialista en estrategia digital, marketing de contenidos y posicionamiento de marca. Ayudo a empresas y agencias a conectar con su audiencia y acelerar su crecimiento.</p>
+            <span class="hero-badge">Transformador Digital 🚀</span>
+            <h1>Hola, soy <span class="mint">Ramón</span> <span class="purple">Espinoza</span></h1>
+            <p>Especialista en Marketing Digital y Estrategia de Marca. Convierto ideas en resultados medibles con estrategias de contenidos y posicionamiento digital.</p>
             <div class="hero-buttons">
-                <a href="#proyectos" class="btn btn-primary">Ver mis proyectos →</a>
-                <a href="#contacto" class="btn btn-secondary">Contáctame</a>
+                <button class="btn btn-primary">Ver mis proyectos</button>
+                <button class="btn btn-secondary">Descargar CV</button>
             </div>
-            <p style="color: var(--dark-muted); font-size: 0.875rem;">↓ Scroll para conocer más</p>
         </div>
     </section>
 
-    <!-- Experience Section -->
+    <!-- Sobre Mí Section -->
+    <section id="sobre-mi">
+        <div class="container">
+            <h2>Sobre Mí</h2>
+            <p>Mi pasión es ayudar a marcas a crecer en el mundo digital</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                <div style="background-color: var(--dark-secondary); padding: 2rem; border-radius: 0.75rem; border: 1px solid rgba(16, 185, 129, 0.3);">
+                    <h3 style="color: var(--mint); margin-bottom: 1rem;">📊 Marketing Digital</h3>
+                    <p style="color: var(--dark-muted);">Estrategias integrales de marketing digital enfocadas en resultados y ROI medible.</p>
+                </div>
+                <div style="background-color: var(--dark-secondary); padding: 2rem; border-radius: 0.75rem; border: 1px solid rgba(16, 185, 129, 0.3);">
+                    <h3 style="color: var(--mint); margin-bottom: 1rem;">📝 Content Strategy</h3>
+                    <p style="color: var(--dark-muted);">Creación de contenidos estratégicos que conectan con tu audiencia y generan engagement.</p>
+                </div>
+                <div style="background-color: var(--dark-secondary); padding: 2rem; border-radius: 0.75rem; border: 1px solid rgba(16, 185, 129, 0.3);">
+                    <h3 style="color: var(--mint); margin-bottom: 1rem;">🎯 Branding</h3>
+                    <p style="color: var(--dark-muted);">Posicionamiento de marca auténtico que te diferencia en el mercado.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experiencia Section -->
     <section id="experiencia">
         <div class="container">
-            <h2>Experiencia</h2>
-            <p>Mi recorrido en marketing digital y estrategia de marca</p>
-
-            <div class="experience-list">
-                <!-- Experience 1 -->
-                <div class="experience-item section-item">
-                    <div class="experience-timeline">
-                        <div class="timeline-dot">1</div>
-                        <div class="timeline-line"></div>
+            <h2>Experiencia Profesional</h2>
+            <p>Mi trayectoria en el mundo del marketing digital</p>
+            
+            <div class="experience-item">
+                <div class="experience-timeline">
+                    <div class="timeline-dot">1</div>
+                    <div class="timeline-line"></div>
+                </div>
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <div>
+                            <div class="experience-company">Especialista en Marketing Digital</div>
+                            <div class="experience-role">Freelancer</div>
+                        </div>
+                        <div class="experience-year">2020 - Presente</div>
                     </div>
-                    <div class="experience-card">
-                        <div class="experience-header">
-                            <div>
-                                <div class="experience-company">Kia Futura</div>
-                                <div class="experience-role">Practicante - Marketing Digital</div>
-                            </div>
-                            <div class="experience-year">2025</div>
-                        </div>
-                        <p class="experience-description">Estrategias de contenido digital para redes sociales. Análisis de métricas, edición audiovisual y organización de eventos.</p>
-                        <div class="achievements">
-                            <div class="achievements-label">Logros destacados:</div>
-                            <ul class="achievements-list">
-                                <li><span>✓</span> Incremento 45% engagement</li>
-                                <li><span>✓</span> Evento "Mexi-Can Fest" coordinado</li>
-                                <li><span>✓</span> 3.2K followers generados</li>
-                            </ul>
-                        </div>
-                        <div class="tags">
-                            <span class="tag">Social Media</span>
-                            <span class="tag">Content Strategy</span>
-                            <span class="tag">Analytics</span>
-                            <span class="tag">Event Management</span>
-                        </div>
+                    <div class="experience-description">
+                        Trabajo con marcas locales e internacionales en estrategia digital, gestión de redes sociales y posicionamiento SEO.
+                    </div>
+                    <div class="achievements">
+                        <div class="achievements-label">LOGROS</div>
+                        <ul class="achievements-list">
+                            <li><span>✓</span> Crecimiento de audiencias entre 150-300%</li>
+                            <li><span>✓</span> ROI mejorado en 200% en clientes</li>
+                            <li><span>✓</span> 15+ campañas exitosas ejecutadas</li>
+                        </ul>
+                    </div>
+                    <div class="tags">
+                        <span class="tag">Digital Marketing</span>
+                        <span class="tag">Social Media</span>
+                        <span class="tag">SEO</span>
+                        <span class="tag">Analytics</span>
                     </div>
                 </div>
+            </div>
 
-                <!-- Experience 2 -->
-                <div class="experience-item section-item">
-                    <div class="experience-timeline">
-                        <div class="timeline-dot">2</div>
-                        <div class="timeline-line"></div>
-                    </div>
-                    <div class="experience-card">
-                        <div class="experience-header">
-                            <div>
-                                <div class="experience-company">Agencia 3CINCO</div>
-                                <div class="experience-role">Publicista - Marketing & BTL</div>
-                            </div>
-                            <div class="experience-year">2023-2025</div>
-                        </div>
-                        <p class="experience-description">Diseño y ejecución de estrategias promocionales para empresas y franquicias. Activaciones de marca, marketing tradicional y digital.</p>
-                        <div class="achievements">
-                            <div class="achievements-label">Logros destacados:</div>
-                            <ul class="achievements-list">
-                                <li><span>✓</span> 15+ campañas ejecutadas</li>
-                                <li><span>✓</span> Eventos: Caffenio, El Nido de los Águilas</li>
-                                <li><span>✓</span> Alianzas con microempresas locales</li>
-                            </ul>
-                        </div>
-                        <div class="tags">
-                            <span class="tag">BTL</span>
-                            <span class="tag">Event Marketing</span>
-                            <span class="tag">Brand Activation</span>
-                            <span class="tag">Digital Strategy</span>
-                        </div>
-                    </div>
+            <div class="experience-item">
+                <div class="experience-timeline">
+                    <div class="timeline-dot">2</div>
+                    <div class="timeline-line"></div>
                 </div>
-
-                <!-- Experience 3 -->
-                <div class="experience-item section-item">
-                    <div class="experience-timeline">
-                        <div class="timeline-dot">3</div>
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <div>
+                            <div class="experience-company">Community Manager</div>
+                            <div class="experience-role">Agencia Digital</div>
+                        </div>
+                        <div class="experience-year">2018 - 2020</div>
                     </div>
-                    <div class="experience-card">
-                        <div class="experience-header">
-                            <div>
-                                <div class="experience-company">Colaboraciones Múltiples</div>
-                                <div class="experience-role">Content & Marketing Specialist</div>
-                            </div>
-                            <div class="experience-year">2023-2025</div>
-                        </div>
-                        <p class="experience-description">Trabajo con EXE Inmobiliaria, Agencia Musical Piagon, Venus Dentistry y DSC/Flujo Digital.</p>
-                        <div class="achievements">
-                            <div class="achievements-label">Logros destacados:</div>
-                            <ul class="achievements-list">
-                                <li><span>✓</span> 4 clientes diferentes</li>
-                                <li><span>✓</span> Meta Ads campaigns</li>
-                                <li><span>✓</span> Estrategias de posicionamiento</li>
-                                <li><span>✓</span> Análisis de comportamiento digital</li>
-                            </ul>
-                        </div>
-                        <div class="tags">
-                            <span class="tag">Marketing Digital</span>
-                            <span class="tag">Ads Management</span>
-                            <span class="tag">Branding</span>
-                            <span class="tag">Analytics</span>
-                        </div>
+                    <div class="experience-description">
+                        Gestión integral de comunidades digitales, creación de contenidos y estrategias de engagement para múltiples marcas.
+                    </div>
+                    <div class="achievements">
+                        <div class="achievements-label">LOGROS</div>
+                        <ul class="achievements-list">
+                            <li><span>✓</span> Comunidades de 50K+ seguidores</li>
+                            <li><span>✓</span> Engagement rate 8-12%</li>
+                            <li><span>✓</span> Gestión de 10+ cuentas simultáneamente</li>
+                        </ul>
+                    </div>
+                    <div class="tags">
+                        <span class="tag">Community</span>
+                        <span class="tag">Content</span>
+                        <span class="tag">Instagram</span>
+                        <span class="tag">TikTok</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
+    <!-- Proyectos Section -->
     <section class="projects-bg" id="proyectos">
         <div class="container">
             <h2>Proyectos Destacados</h2>
-            <p>Casos de estudio que demuestran mi expertise</p>
+            <p>Casos de éxito que demuestran el impacto de nuestras estrategias</p>
 
             <div class="filters">
-                <button class="filter-btn active" onclick="filterProjects('all')">Todos</button>
-                <button class="filter-btn" onclick="filterProjects('academic')">Académicos</button>
-                <button class="filter-btn" onclick="filterProjects('professional')">Profesionales</button>
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="social">Social Media</button>
+                <button class="filter-btn" data-filter="branding">Branding</button>
+                <button class="filter-btn" data-filter="estrategia">Estrategia</button>
             </div>
 
-            <div class="projects-grid" id="projectsGrid">
-                <!-- Projects will be inserted here by JavaScript -->
-            </div>
+            <div class="projects-grid">
+                <div class="project-card" data-category="social">
+                    <div class="project-emoji">📱</div>
+                    <span class="project-type">Social Media</span>
+                    <h3>Campaña Viral TikTok</h3>
+                    <p class="project-description">Estrategia de contenido que generó 2M de visualizaciones en 3 semanas.</p>
+                    <div class="project-results">
+                        <div class="project-results-label">RESULTADOS</div>
+                        <ul class="project-results-list">
+                            <li><span>→</span> 2 millones de vistas</li>
+                            <li><span>→</span> 50K nuevos seguidores</li>
+                            <li><span>→</span> 15% conversion rate</li>
+                        </ul>
+                    </div>
+                    <div class="project-tools">
+                        <span class="tool-tag">TikTok</span>
+                        <span class="tool-tag">Adobe Creative</span>
+                        <span class="tool-tag">Analytics</span>
+                    </div>
+                </div>
 
-            <div class="gallery-placeholder">
-                <div class="gallery-emoji">🎨</div>
-                <h4>Galería Visual</h4>
-                <p>Pronto: Capturas de campañas reales, diseños y resultados de analytics</p>
-                <p style="color: var(--dark-muted); font-size: 0.875rem;">Integrando contenido del Drive...</p>
+                <div class="project-card" data-category="branding">
+                    <div class="project-emoji">🎨</div>
+                    <span class="project-type">Branding</span>
+                    <h3>Rebranding Exitoso</h3>
+                    <p class="project-description">Renovación completa de identidad visual y estrategia de posicionamiento.</p>
+                    <div class="project-results">
+                        <div class="project-results-label">RESULTADOS</div>
+                        <ul class="project-results-list">
+                            <li><span>→</span> Identidad renovada</li>
+                            <li><span>→</span> Brand awareness +85%</li>
+                            <li><span>→</span> Percepción premium mejorada</li>
+                        </ul>
+                    </div>
+                    <div class="project-tools">
+                        <span class="tool-tag">Brand Strategy</span>
+                        <span class="tool-tag">Design</span>
+                        <span class="tool-tag">Positioning</span>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="estrategia">
+                    <div class="project-emoji">📈</div>
+                    <span class="project-type">Estrategia</span>
+                    <h3>Plan Digital Integral</h3>
+                    <p class="project-description">Estrategia 360° que integró todas las plataformas digitales de la marca.</p>
+                    <div class="project-results">
+                        <div class="project-results-label">RESULTADOS</div>
+                        <ul class="project-results-list">
+                            <li><span>→</span> Presencia unificada</li>
+                            <li><span>→</span> Conversiones +200%</li>
+                            <li><span>→</span> ROI 5:1</li>
+                        </ul>
+                    </div>
+                    <div class="project-tools">
+                        <span class="tool-tag">Strategy</span>
+                        <span class="tool-tag">Analytics</span>
+                        <span class="tool-tag">CRM</span>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="social">
+                    <div class="project-emoji">💬</div>
+                    <span class="project-type">Social Media</span>
+                    <h3>Gestión Comunitaria</h3>
+                    <p class="project-description">Crecimiento y engagement en comunidad digital de 100K+ miembros.</p>
+                    <div class="project-results">
+                        <div class="project-results-label">RESULTADOS</div>
+                        <ul class="project-results-list">
+                            <li><span>→</span> Community +200%</li>
+                            <li><span>→</span> Engagement 12%</li>
+                            <li><span>→</span> Loyalidad mejorada</li>
+                        </ul>
+                    </div>
+                    <div class="project-tools">
+                        <span class="tool-tag">Community Mgmt</span>
+                        <span class="tool-tag">Content</span>
+                        <span class="tool-tag">Discord</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
+    <!-- Habilidades Section -->
     <section id="habilidades">
         <div class="container">
-            <h2>Habilidades</h2>
-            <p>Competencias verificadas y certificadas</p>
+            <h2>Habilidades Profesionales</h2>
+            <p>Competencias desarrolladas a lo largo de mi trayectoria</p>
 
-            <div class="skills-grid" id="skillsGrid">
-                <!-- Skills will be inserted here by JavaScript -->
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Marketing Digital</h3>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>SEO/SEM</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="--skill-width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Social Media</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="--skill-width: 95%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Email Marketing</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="--skill-width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Herramientas</h3>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Adobe Suite</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="--skill-width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Analytics</span>
+                            <span>88%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="--skill-width: 88%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>CMS/Platforms</span>
+                            <span>92%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="--skill-width: 92%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Blandas</h3>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Comunicación</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="--skill-width: 95%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Liderazgo</span>
+                            <span>88%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="--skill-width: 88%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Creatividad</span>
+                            <span>92%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="--skill-width: 92%"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Certifications Section -->
-    <section class="cert-bg">
+    <!-- Certificaciones Section -->
+    <section class="cert-bg" id="certificaciones">
         <div class="container">
-            <h2>Certificaciones</h2>
-            <p>Formación continua y especialización profesional</p>
+            <h2>Certificaciones & Reconocimientos</h2>
+            <p>Formación continua y validación profesional</p>
 
-            <div class="certifications-grid" id="certificationsGrid">
-                <!-- Certifications will be inserted here by JavaScript -->
+            <div class="certifications-grid">
+                <div class="cert-card">
+                    <div class="cert-header">
+                        <div class="cert-emoji">🏆</div>
+                        <span class="cert-badge">Validado</span>
+                    </div>
+                    <h3 class="cert-title">Google Ads Certified</h3>
+                    <p class="cert-issuer">Google</p>
+                    <p class="cert-date">Issued: 2023 | Valid until: 2024</p>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-header">
+                        <div class="cert-emoji">📊</div>
+                        <span class="cert-badge">Validado</span>
+                    </div>
+                    <h3 class="cert-title">Google Analytics Professional</h3>
+                    <p class="cert-issuer">Google</p>
+                    <p class="cert-date">Issued: 2023 | Valid until: 2024</p>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-header">
+                        <div class="cert-emoji">🎓</div>
+                        <span class="cert-badge">Validado</span>
+                    </div>
+                    <h3 class="cert-title">Meta Blueprint Certified</h3>
+                    <p class="cert-issuer">Meta</p>
+                    <p class="cert-date">Issued: 2023 | Valid until: 2024</p>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-header">
+                        <div class="cert-emoji">✨</div>
+                        <span class="cert-badge">Validado</span>
+                    </div>
+                    <h3 class="cert-title">HubSpot Inbound Marketing</h3>
+                    <p class="cert-issuer">HubSpot Academy</p>
+                    <p class="cert-date">Issued: 2022 | Valid until: 2024</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contacto Section -->
     <section id="contacto">
         <div class="contact-content">
-            <h2>¿Hablamos?</h2>
-            <p class="contact-description">Estoy abierto a oportunidades en agencias, empresas y proyectos especiales. Conectemos.</p>
-            
+            <h2>¿Listos para Transformar tu Marca?</h2>
+            <p class="contact-description">
+                Contactame para discutir cómo podemos llevar tu presencia digital al siguiente nivel.
+            </p>
             <div class="contact-buttons">
-                <a href="mailto:jossueramon12@gmail.com" class="btn btn-primary">
-                    ✉️ Envía un email
-                </a>
-                <a href="https://www.linkedin.com/in/jossue-ramon-martinez-espinoza-b56731385" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-                    🔗 LinkedIn
-                </a>
+                <button class="btn btn-primary">Enviar Mensaje</button>
+                <button class="btn btn-secondary">Agendar Llamada</button>
             </div>
 
             <div class="contact-grid">
                 <div class="contact-card">
-                    <p>📞 Teléfono</p>
-                    <strong>(686) 511-0497</strong>
+                    <p><strong>📧 Email</strong></p>
+                    <p>ramon@example.com</p>
                 </div>
                 <div class="contact-card">
-                    <p>📧 Email</p>
-                    <strong>jossueramon12@gmail.com</strong>
+                    <p><strong>📱 Teléfono</strong></p>
+                    <p>+52 686 1234567</p>
+                </div>
+                <div class="contact-card">
+                    <p><strong>📍 Ubicación</strong></p>
+                    <p>Mexicali, Baja California</p>
+                </div>
+                <div class="contact-card">
+                    <p><strong>💼 LinkedIn</strong></p>
+                    <p>linkedin.com/in/ramonespinoza</p>
                 </div>
             </div>
         </div>
@@ -1255,16 +1376,12 @@
 
     <!-- Download CV Section -->
     <section class="download-section">
-        <div class="container">
-            <div class="download-content">
-                <div class="download-text">
-                    <h4>Descarga mi CV completo</h4>
-                    <p>Disponible en PDF con historial detallado</p>
-                </div>
-                <a href="#" class="btn btn-primary" onclick="downloadCV()">
-                    ⬇️ Descargar CV
-                </a>
+        <div class="download-content">
+            <div class="download-text">
+                <h4>¿Quieres conocer más detalles?</h4>
+                <p>Descarga mi CV completo con toda mi experiencia, habilidades y certificaciones</p>
             </div>
+            <button class="btn btn-primary">📥 Descargar CV</button>
         </div>
     </section>
 
@@ -1274,234 +1391,129 @@
             <div class="footer-top">
                 <div class="footer-brand">
                     <h3>Ramón Espinoza</h3>
-                    <p>Marketing Digital | Estrategia de Marca | Growth</p>
+                    <p>Marketing Digital & Estrategia de Marca</p>
                 </div>
                 <div class="footer-links">
-                    <a href="https://www.linkedin.com/in/jossue-ramon-martinez-espinoza-b56731385" target="_blank" rel="noopener noreferrer" title="LinkedIn">🔗</a>
-                    <a href="mailto:jossueramon12@gmail.com" title="Email">✉️</a>
+                    <a href="https://twitter.com" target="_blank" title="Twitter">𝕏</a>
+                    <a href="https://linkedin.com" target="_blank" title="LinkedIn">💼</a>
+                    <a href="https://instagram.com" target="_blank" title="Instagram">📷</a>
+                    <a href="https://github.com" target="_blank" title="Portfolio">🔗</a>
                 </div>
             </div>
-
             <div class="footer-bottom">
-                <p>© 2026 Ramón Espinoza. Diseño web moderno y responsive. Basado en estrategia digital.<br>
-                Disponible para agencias y oportunidades de crecimiento.</p>
+                <p>© 2024 Ramón Espinoza. Todos los derechos reservados.</p>
+                <p>Diseño & Desarrollo | Portafolio Profesional</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Data
-        const projectsData = [
-            {
-                id: 1,
-                title: 'Bean Plant Based Food',
-                type: 'Investigación de Mercado',
-                category: 'academic',
-                emoji: '📊',
-                description: 'Estudio completo de segmentación y perfil del consumidor para restaurante vegano en Mexicali.',
-                results: [
-                    'Definición clara del perfil demográfico (21-35 años, 70% mujeres)',
-                    'Identificación de motivaciones principales (salud, ética animal)',
-                    'Recomendaciones estratégicas para posicionamiento'
-                ],
-                tools: ['Market Research', 'Data Analysis', 'Consumer Insights']
-            },
-            {
-                id: 2,
-                title: 'Huellitas Mxcl',
-                type: 'Análisis Estratégico & Makeover',
-                category: 'academic',
-                emoji: '🐾',
-                description: 'Investigación y propuesta de transformación de comunicación para refugio de animales con modelo de negocio social.',
-                results: [
-                    'Estrategia de sostenibilidad económica identificada',
-                    'Propuesta de servicios generadores de ingresos (hotel canino)',
-                    'Plan integral de comunicación digital'
-                ],
-                tools: ['Strategic Analysis', 'Business Model', 'Social Media Strategy']
-            },
-            {
-                id: 3,
-                title: 'Kia Futura - Content Strategy',
-                type: 'Estrategia de Contenido Digital',
-                category: 'professional',
-                emoji: '🎬',
-                description: 'Desarrollo de calendarios de contenido, edición audiovisual y análisis de desempeño en redes sociales.',
-                results: [
-                    'Calendario de contenido trimestral',
-                    'Análisis de engagement y CTR',
-                    'Reportes de desempeño mensual'
-                ],
-                tools: ['Content Planning', 'Video Editing', 'Analytics']
-            },
-            {
-                id: 4,
-                title: 'Agencia 3CINCO - Activaciones',
-                type: 'Estrategia de Activación de Marca',
-                category: 'professional',
-                emoji: '🎯',
-                description: 'Ejecución de campañas promocionales y activaciones para múltiples empresas y franquicias.',
-                results: [
-                    '15+ activaciones diseñadas',
-                    'Gestión logística integral',
-                    'Impacto en visibilidad de marca'
-                ],
-                tools: ['Event Planning', 'Brand Activation', 'Marketing Execution']
-            }
-        ];
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
 
-        const skillsData = {
-            'Marketing Digital': ['SEO/SEM', 'Social Media Management', 'Content Strategy', 'Email Marketing', 'Analytics'],
-            'Estrategia': ['Posicionamiento de marca', 'Investigación de mercado', 'Consumer Insights', 'Business Strategy', 'Propuestas de valor'],
-            'Herramientas': ['Meta Ads', 'Google Analytics', 'Canva', 'CapCut', 'Adobe Básico', 'Excel Avanzado', 'HubSpot'],
-            'Soft Skills': ['Análisis crítico', 'Comunicación profesional', 'Gestión de proyectos', 'Trabajo en equipo', 'Resolución de problemas']
-        };
+        // Load saved theme
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        if (savedTheme === 'light') {
+            body.classList.add('light-mode');
+            themeToggle.textContent = '🌞';
+        }
 
-        const certificationsData = [
-            {
-                title: 'Marketing Digital',
-                issuer: 'HubSpot Academy',
-                date: 'Completado Mayo 2025',
-                emoji: '📧',
-                badge: 'Verificado'
-            },
-            {
-                title: 'El Camino del Inversor: Método, Fundamentos de Inversión y Riesgo',
-                issuer: 'Santander Open Academy',
-                date: 'Completado 2025',
-                emoji: '💰',
-                badge: 'Verificado'
-            },
-            {
-                title: 'Excel Avanzado',
-                issuer: 'Santander Open Academy',
-                date: 'Completado Junio 2026',
-                emoji: '📊',
-                badge: 'Nuevo'
-            },
-            {
-                title: 'Inglés Técnico',
-                issuer: 'Facultad de Idiomas UABC',
-                date: 'Completado',
-                emoji: '🌐',
-                badge: 'Egresado'
-            }
-        ];
-
-        // Initialize
-        document.addEventListener('DOMContentLoaded', () => {
-            renderProjects('all');
-            renderSkills();
-            renderCertifications();
-            setupScrollAnimations();
-            setupTheme();
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('light-mode');
+            const isLightMode = body.classList.contains('light-mode');
+            themeToggle.textContent = isLightMode ? '🌞' : '🌙';
+            localStorage.setItem('theme', isLightMode ? 'light' : 'dark');
         });
 
-        // Functions
-        function toggleTheme() {
-            document.body.classList.toggle('light-mode');
-            const isDark = !document.body.classList.contains('light-mode');
-            localStorage.setItem('theme', isDark ? 'dark' : 'light');
-        }
-
-        function setupTheme() {
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme === 'light') {
-                document.body.classList.add('light-mode');
-                document.querySelector('.theme-toggle').textContent = '🌙';
-            }
-        }
-
-        function toggleMenu() {
-            // Mobile menu functionality can be added here
-        }
-
-        function filterProjects(category) {
-            renderProjects(category);
-            document.querySelectorAll('.filter-btn').forEach(btn => {
-                btn.classList.remove('active');
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
             });
-            event.target.classList.add('active');
-        }
+        });
 
-        function renderProjects(category) {
-            const grid = document.getElementById('projectsGrid');
-            const filtered = category === 'all' 
-                ? projectsData 
-                : projectsData.filter(p => p.category === category);
+        // Project Filter
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
 
-            grid.innerHTML = filtered.map(project => `
-                <div class="project-card">
-                    <div class="project-emoji">${project.emoji}</div>
-                    <div class="project-type">${project.type}</div>
-                    <h3>${project.title}</h3>
-                    <p class="project-description">${project.description}</p>
-                    <div class="project-results">
-                        <div class="project-results-label">Resultados:</div>
-                        <ul class="project-results-list">
-                            ${project.results.map(r => `<li><span>→</span> ${r}</li>`).join('')}
-                        </ul>
-                    </div>
-                    <div class="project-tools">
-                        ${project.tools.map(tool => `<span class="tool-tag">${tool}</span>`).join('')}
-                    </div>
-                </div>
-            `).join('');
-        }
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
 
-        function renderSkills() {
-            const grid = document.getElementById('skillsGrid');
-            grid.innerHTML = Object.entries(skillsData).map(([category, skills]) => `
-                <div class="skill-category">
-                    <h3>${category}</h3>
-                    ${skills.map((skill, idx) => {
-                        const width = 75 + Math.random() * 25;
-                        return `
-                            <div class="skill-item">
-                                <div class="skill-name">${skill}</div>
-                                <div class="skill-bar">
-                                    <div class="skill-fill" style="--skill-width: ${width}%"></div>
-                                </div>
-                            </div>
-                        `;
-                    }).join('')}
-                </div>
-            `).join('');
-        }
-
-        function renderCertifications() {
-            const grid = document.getElementById('certificationsGrid');
-            grid.innerHTML = certificationsData.map(cert => `
-                <div class="cert-card">
-                    <div class="cert-header">
-                        <span class="cert-emoji">${cert.emoji}</span>
-                        <span class="cert-badge">${cert.badge}</span>
-                    </div>
-                    <h4 class="cert-title">${cert.title}</h4>
-                    <p class="cert-issuer">${cert.issuer}</p>
-                    <p class="cert-date">${cert.date}</p>
-                </div>
-            `).join('');
-        }
-
-        function setupScrollAnimations() {
-            const observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('revealed');
+                const filter = btn.dataset.filter;
+                projectCards.forEach(card => {
+                    if (filter === 'all' || card.dataset.category === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
                     }
                 });
-            }, { threshold: 0.1 });
-
-            document.querySelectorAll('.experience-item, .project-card, .skill-category, .cert-card').forEach(el => {
-                el.classList.add('scroll-reveal');
-                observer.observe(el);
             });
-        }
+        });
 
-        function downloadCV() {
-            alert('El CV estará disponible pronto. Por ahora, puedes contactarme directamente en jossueramon12@gmail.com');
-        }
+        // Download CV Button
+        const cvButtons = document.querySelectorAll('.btn-primary');
+        const downloadButtons = Array.from(cvButtons).filter(btn => 
+            btn.textContent.includes('Descargar') || btn.textContent.includes('📥')
+        );
+
+        downloadButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Crear elemento anchor para descargar
+                const link = document.createElement('a');
+                link.href = '#'; // Reemplaza con la ruta de tu CV
+                link.download = 'Ramon_Espinoza_CV.pdf';
+                link.textContent = 'Descargando...';
+                // link.click(); // Descomenta cuando tengas el archivo PDF
+                alert('🎯 CV descargable disponible aquí. Contacta para obtener el documento completo.');
+            });
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.style.display = 'none';
+            });
+        });
     </script>
 </body>
 </html>
