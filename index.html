@@ -1,0 +1,1717 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramón Espinoza - Mercadotecnia & Estrategia de Marca</title>
+    <meta name="description" content="Portafolio profesional de Ramón Espinoza. Especialista en marketing, estrategia de contenidos y posicionamiento de marca.">
+    <meta name="keywords" content="mercadotecnia, estrategia de marca, social media, contenidos, Mexicali">
+    <meta name="author" content="Ramón Espinoza">
+    <meta property="og:title" content="Ramón Espinoza - Marketing">
+    <meta property="og:description" content="Transformo marcas en resultados. Especialista en estrategia digital y marketing de contenidos.">
+    <meta property="og:type" content="website">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Dark theme tokens */
+            --gold:      #C9A84C;
+            --gold-dim:  #A8893A;
+            --gold-glow: rgba(201, 168, 76, 0.18);
+            --purple:    #A07CF0;
+            --cyan:      #4DC9E6;
+            --mint:      #10B981; /* kept for JS class compatibility */
+
+            --dark-bg:        #080C14;
+            --dark-secondary: #0E1520;
+            --dark-card:      #111827;
+            --dark-border:    rgba(201, 168, 76, 0.18);
+            --dark-border-hi: rgba(201, 168, 76, 0.55);
+            --dark-text:      #EEF2F8;
+            --dark-muted:     #8899B0;
+            --dark-subtle:    #4A5568;
+
+            /* Light theme tokens */
+            --light-bg:        #F5F7FA;
+            --light-secondary: #EAECF0;
+            --light-card:      #FFFFFF;
+            --light-text:      #10172A;
+            --light-muted:     #5A6478;
+
+            --font-display: 'Playfair Display', Georgia, serif;
+            --font-body:    'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+            --radius-sm: 6px;
+            --radius-md: 12px;
+            --radius-lg: 18px;
+            --radius-xl: 28px;
+
+            --shadow-card: 0 4px 24px rgba(0,0,0,0.35), 0 1px 4px rgba(0,0,0,0.2);
+            --shadow-gold: 0 0 28px rgba(201,168,76,0.12);
+            --transition: 0.28s cubic-bezier(0.4,0,0.2,1);
+        }
+
+        /* ─── SCROLLBAR ──────────────────────────────── */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--dark-bg); }
+        ::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 3px; }
+        body.light-mode::-webkit-scrollbar-track { background: var(--light-secondary); }
+        body.light-mode::-webkit-scrollbar-thumb { background: var(--gold-dim); }
+
+        html { scroll-behavior: smooth; }
+
+        /* ─── BASE ───────────────────────────────────── */
+        body {
+            font-family: var(--font-body);
+            background-color: var(--dark-bg);
+            color: var(--dark-text);
+            transition: background-color var(--transition), color var(--transition);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body.light-mode {
+            background-color: var(--light-bg);
+            color: var(--light-text);
+        }
+
+        /* ─── NOISE TEXTURE OVERLAY ──────────────────── */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.6;
+        }
+
+        /* ─── TYPOGRAPHY HELPERS ─────────────────────── */
+        .display { font-family: var(--font-display); }
+
+        /* ─── NAV ────────────────────────────────────── */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 50;
+            backdrop-filter: blur(18px) saturate(1.4);
+            -webkit-backdrop-filter: blur(18px) saturate(1.4);
+            background-color: rgba(8, 12, 20, 0.82);
+            border-bottom: 1px solid var(--dark-border);
+            transition: all var(--transition);
+        }
+
+        body.light-mode nav {
+            background-color: rgba(245, 247, 250, 0.88);
+            border-bottom: 1px solid rgba(201,168,76,0.15);
+        }
+
+        nav .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: 0.01em;
+            color: var(--gold);
+            text-decoration: none;
+            position: relative;
+        }
+
+        .logo::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, var(--gold), transparent);
+        }
+
+        nav .nav-links {
+            display: none;
+            gap: 2.25rem;
+            align-items: center;
+        }
+
+        nav .nav-links a {
+            color: var(--dark-muted);
+            text-decoration: none;
+            font-size: 0.825rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            transition: color var(--transition);
+            position: relative;
+            padding-bottom: 2px;
+        }
+
+        nav .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--gold);
+            transition: width var(--transition);
+        }
+
+        nav .nav-links a:hover { color: var(--gold); }
+        nav .nav-links a:hover::after { width: 100%; }
+
+        body.light-mode nav .nav-links a { color: var(--light-muted); }
+        body.light-mode nav .nav-links a:hover { color: var(--gold-dim); }
+
+        .theme-toggle {
+            background: transparent;
+            color: var(--gold);
+            border: 1px solid var(--dark-border);
+            padding: 0.4rem 0.55rem;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            font-size: 0.95rem;
+            transition: all var(--transition);
+            line-height: 1;
+        }
+
+        .theme-toggle:hover {
+            background: var(--gold-glow);
+            border-color: var(--gold);
+            transform: scale(1.08);
+        }
+
+        body.light-mode .theme-toggle {
+            border-color: rgba(168,137,58,0.3);
+            background: rgba(201,168,76,0.08);
+        }
+
+        .mobile-menu {
+            display: flex;
+            gap: 0.75rem;
+            align-items: center;
+        }
+
+        .menu-toggle {
+            background: none;
+            border: none;
+            color: var(--dark-text);
+            font-size: 1.4rem;
+            cursor: pointer;
+            display: none;
+            padding: 0.25rem;
+            transition: color var(--transition);
+        }
+
+        body.light-mode .menu-toggle { color: var(--light-text); }
+
+        @media (min-width: 768px) {
+            nav .nav-links { display: flex; }
+            .menu-toggle { display: none !important; }
+        }
+
+        @media (max-width: 767px) {
+            .menu-toggle { display: block; }
+        }
+
+        /* ─── HERO ───────────────────────────────────── */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1.5rem;
+            padding-top: 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Ambient background blobs */
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(201,168,76,0.07) 0%, transparent 65%);
+            border-radius: 50%;
+            left: -10%;
+            top: 10%;
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(160,124,240,0.08) 0%, transparent 65%);
+            border-radius: 50%;
+            right: -5%;
+            bottom: 5%;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 58rem;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+            animation: fadeInUp 0.9s cubic-bezier(0.22,1,0.36,1) both;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: linear-gradient(135deg, rgba(201,168,76,0.12), rgba(201,168,76,0.06));
+            border: 1px solid var(--dark-border-hi);
+            color: var(--gold);
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 0.45rem 1.1rem;
+            border-radius: 9999px;
+            margin-bottom: 2rem;
+        }
+
+        body.light-mode .hero-badge {
+            background: rgba(201,168,76,0.09);
+            border-color: rgba(201,168,76,0.35);
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.6rem, 7vw, 4.2rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.15;
+            letter-spacing: -0.01em;
+        }
+
+        .hero h1 .mint {
+            /* class kept for JS compatibility - styled as gold */
+            color: var(--gold);
+        }
+
+        .hero h1 .purple {
+            color: var(--purple);
+        }
+
+        .hero p {
+            font-size: 1.05rem;
+            color: var(--dark-muted);
+            margin-bottom: 2.5rem;
+            max-width: 34rem;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.75;
+        }
+
+        body.light-mode .hero p { color: var(--light-muted); }
+
+        .hero-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 3.5rem;
+        }
+
+        @media (min-width: 640px) {
+            .hero-buttons { flex-direction: row; }
+        }
+
+        .hero-scroll-hint {
+            color: var(--dark-subtle);
+            font-size: 0.8rem;
+            letter-spacing: 0.06em;
+        }
+
+        body.light-mode .hero-scroll-hint { color: var(--light-muted); }
+
+        /* ─── BUTTONS ────────────────────────────────── */
+        .btn {
+            padding: 0.75rem 2rem;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: 0.88rem;
+            letter-spacing: 0.04em;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            justify-content: center;
+            transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
+        }
+
+        .btn:hover { transform: translateY(-2px); }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--gold), var(--gold-dim));
+            color: #060a10;
+            box-shadow: 0 4px 20px rgba(201,168,76,0.3);
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 8px 30px rgba(201,168,76,0.45);
+        }
+
+        .btn-secondary {
+            border: 1.5px solid var(--gold);
+            color: var(--gold);
+            background: transparent;
+        }
+
+        .btn-secondary:hover {
+            background: var(--gold-glow);
+            box-shadow: 0 4px 20px rgba(201,168,76,0.15);
+        }
+
+        /* ─── SECTIONS ───────────────────────────────── */
+        section {
+            padding: 5.5rem 1.5rem;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 0.75rem;
+        }
+
+        section h2 {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4.5vw, 2.8rem);
+            font-weight: 800;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+        }
+
+        .section-subtitle {
+            font-size: 1rem;
+            color: var(--dark-muted);
+            margin-bottom: 4rem;
+            max-width: 40rem;
+        }
+
+        body.light-mode .section-subtitle { color: var(--light-muted); }
+
+        /* keep old selector working for light-mode */
+        body.light-mode section > .container > p { color: var(--light-muted); }
+        section > .container > p {
+            font-size: 1rem;
+            color: var(--dark-muted);
+            margin-bottom: 4rem;
+        }
+
+        /* ─── DIVIDER ────────────────────────────────── */
+        .section-divider {
+            width: 48px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--gold), transparent);
+            margin-bottom: 3.5rem;
+        }
+
+        /* ─── EXPERIENCE TIMELINE ────────────────────── */
+        .experience-list { position: relative; }
+
+        .experience-item {
+            display: flex;
+            gap: 1.75rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .experience-timeline {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .timeline-dot {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dim));
+            color: #060a10;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1rem;
+            font-family: var(--font-display);
+            box-shadow: 0 0 0 4px rgba(201,168,76,0.12);
+            flex-shrink: 0;
+        }
+
+        .timeline-line {
+            width: 1px;
+            flex: 1;
+            min-height: 60px;
+            background: linear-gradient(to bottom, var(--gold-dim), transparent);
+            margin-top: 0.75rem;
+            opacity: 0.4;
+        }
+
+        .experience-card {
+            flex: 1;
+            background-color: var(--dark-card);
+            padding: 1.75rem 2rem;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--dark-border);
+            border-left: 3px solid var(--gold);
+            box-shadow: var(--shadow-card);
+            transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+        }
+
+        body.light-mode .experience-card {
+            background-color: var(--light-card);
+            border-color: rgba(201,168,76,0.2);
+            border-left-color: var(--gold);
+            box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+        }
+
+        .experience-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-card), var(--shadow-gold);
+            border-color: var(--dark-border-hi);
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.875rem;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .experience-company {
+            font-size: 1.175rem;
+            font-weight: 700;
+            font-family: var(--font-display);
+            letter-spacing: -0.01em;
+        }
+
+        .experience-role {
+            color: var(--gold);
+            font-weight: 600;
+            font-size: 0.82rem;
+            letter-spacing: 0.04em;
+            margin-top: 0.2rem;
+        }
+
+        .experience-year {
+            color: var(--dark-muted);
+            font-size: 0.8rem;
+            font-weight: 500;
+            background: rgba(201,168,76,0.08);
+            border: 1px solid var(--dark-border);
+            padding: 0.2rem 0.65rem;
+            border-radius: 9999px;
+            white-space: nowrap;
+            align-self: flex-start;
+        }
+
+        body.light-mode .experience-year {
+            color: var(--light-muted);
+            background: rgba(201,168,76,0.07);
+        }
+
+        .experience-description {
+            color: var(--dark-muted);
+            margin-bottom: 1.25rem;
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        body.light-mode .experience-description { color: var(--light-muted); }
+
+        .achievements { margin-bottom: 1.25rem; }
+
+        .achievements-label {
+            color: var(--dark-muted);
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 0.6rem;
+        }
+
+        body.light-mode .achievements-label { color: var(--light-muted); }
+
+        .achievements-list { list-style: none; }
+
+        .achievements-list li {
+            color: var(--dark-muted);
+            font-size: 0.875rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+            margin-bottom: 0.35rem;
+            line-height: 1.5;
+        }
+
+        body.light-mode .achievements-list li { color: var(--light-muted); }
+
+        .achievements-list span {
+            color: var(--gold);
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 0.05em;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+        }
+
+        .tag {
+            background: rgba(201,168,76,0.1);
+            color: var(--gold);
+            font-size: 0.72rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            border: 1px solid rgba(201,168,76,0.2);
+        }
+
+        /* ─── PROJECTS ───────────────────────────────── */
+        .projects-bg {
+            background: linear-gradient(180deg, var(--dark-secondary) 0%, var(--dark-bg) 100%);
+        }
+
+        body.light-mode .projects-bg {
+            background: linear-gradient(180deg, #EAECF0 0%, var(--light-bg) 100%);
+        }
+
+        .filters {
+            display: flex;
+            gap: 0.6rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: transparent;
+            color: var(--dark-muted);
+            border: 1px solid var(--dark-border);
+            padding: 0.5rem 1.4rem;
+            border-radius: var(--radius-xl);
+            font-weight: 600;
+            font-size: 0.8rem;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            transition: all var(--transition);
+        }
+
+        body.light-mode .filter-btn {
+            color: var(--light-muted);
+            border-color: rgba(201,168,76,0.25);
+        }
+
+        .filter-btn.active {
+            background: linear-gradient(135deg, var(--gold), var(--gold-dim));
+            color: #060a10;
+            border-color: transparent;
+            box-shadow: 0 3px 14px rgba(201,168,76,0.3);
+        }
+
+        .filter-btn:hover:not(.active) {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .project-card {
+            background: var(--dark-card);
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--dark-border);
+            box-shadow: var(--shadow-card);
+            transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--gold), var(--purple), transparent);
+            opacity: 0;
+            transition: opacity var(--transition);
+        }
+
+        .project-card:hover::before { opacity: 1; }
+
+        body.light-mode .project-card {
+            background: var(--light-card);
+            border-color: rgba(201,168,76,0.18);
+            box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-card), var(--shadow-gold);
+            border-color: var(--dark-border-hi);
+        }
+
+        .project-emoji {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .project-type {
+            background: rgba(201,168,76,0.1);
+            color: var(--gold);
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 0.28rem 0.75rem;
+            border-radius: 9999px;
+            display: inline-block;
+            margin-bottom: 0.875rem;
+            border: 1px solid rgba(201,168,76,0.22);
+        }
+
+        .project-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.6rem;
+            letter-spacing: -0.01em;
+        }
+
+        .project-description {
+            color: var(--dark-muted);
+            margin-bottom: 1.5rem;
+            font-size: 0.875rem;
+            line-height: 1.7;
+        }
+
+        body.light-mode .project-description { color: var(--light-muted); }
+
+        .project-results { margin-bottom: 1.5rem; }
+
+        .project-results-label {
+            color: var(--dark-muted);
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 0.65rem;
+        }
+
+        body.light-mode .project-results-label { color: var(--light-muted); }
+
+        .project-results-list { list-style: none; }
+
+        .project-results-list li {
+            color: var(--dark-muted);
+            font-size: 0.85rem;
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.45rem;
+            line-height: 1.5;
+        }
+
+        body.light-mode .project-results-list li { color: var(--light-muted); }
+
+        .project-results-list span {
+            color: var(--gold);
+            flex-shrink: 0;
+            font-weight: 700;
+        }
+
+        .project-tools {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+        }
+
+        .tool-tag {
+            background: rgba(160,124,240,0.1);
+            color: var(--purple);
+            font-size: 0.7rem;
+            padding: 0.22rem 0.6rem;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            border: 1px solid rgba(160,124,240,0.2);
+        }
+
+        /* ─── GALLERY PLACEHOLDER ────────────────────── */
+        .gallery-placeholder {
+            background: linear-gradient(135deg, var(--dark-card), rgba(201,168,76,0.03));
+            border: 1.5px dashed rgba(201,168,76,0.25);
+            border-radius: var(--radius-lg);
+            padding: 3.5rem 1.5rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        body.light-mode .gallery-placeholder {
+            background: rgba(255,255,255,0.7);
+            border-color: rgba(201,168,76,0.3);
+        }
+
+        .gallery-placeholder p { margin-bottom: 0.6rem; }
+        .gallery-placeholder p:last-child {
+            color: var(--dark-subtle);
+            font-size: 0.8rem;
+        }
+
+        body.light-mode .gallery-placeholder p:last-child { color: var(--light-muted); }
+
+        .gallery-emoji {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .gallery-placeholder h4 {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            margin-bottom: 0.6rem;
+        }
+
+        /* ─── SKILLS ─────────────────────────────────── */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.75rem;
+        }
+
+        .skill-category {
+            background: var(--dark-card);
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--dark-border);
+            box-shadow: var(--shadow-card);
+            transition: transform var(--transition), box-shadow var(--transition);
+        }
+
+        .skill-category:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-card), var(--shadow-gold);
+        }
+
+        body.light-mode .skill-category {
+            background: var(--light-card);
+            border-color: rgba(201,168,76,0.18);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+
+        .skill-category h3 {
+            font-family: var(--font-display);
+            color: var(--gold);
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid rgba(201,168,76,0.15);
+        }
+
+        .skill-item { margin-bottom: 1.25rem; }
+        .skill-item:last-child { margin-bottom: 0; }
+
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.45rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .skill-bar {
+            height: 5px;
+            background: rgba(201,168,76,0.1);
+            border-radius: 9999px;
+            overflow: hidden;
+        }
+
+        .skill-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--gold), var(--gold-dim));
+            border-radius: 9999px;
+            animation: fillBar 1.4s cubic-bezier(0.4,0,0.2,1) forwards;
+        }
+
+        @keyframes fillBar {
+            from { width: 0; }
+            to   { width: var(--skill-width); }
+        }
+
+        /* ─── CERTIFICATIONS ─────────────────────────── */
+        .cert-bg {
+            background: linear-gradient(180deg, var(--dark-bg) 0%, var(--dark-secondary) 100%);
+        }
+
+        body.light-mode .cert-bg {
+            background: linear-gradient(180deg, var(--light-bg) 0%, #EAECF0 100%);
+        }
+
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .cert-card {
+            background: var(--dark-card);
+            padding: 1.75rem;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--dark-border);
+            box-shadow: var(--shadow-card);
+            transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cert-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--gold), var(--purple));
+            opacity: 0;
+            transition: opacity var(--transition);
+        }
+
+        .cert-card:hover::after { opacity: 1; }
+
+        body.light-mode .cert-card {
+            background: var(--light-card);
+            border-color: rgba(201,168,76,0.18);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+
+        .cert-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-card), var(--shadow-gold);
+            border-color: var(--dark-border-hi);
+        }
+
+        .cert-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .cert-emoji { font-size: 2rem; }
+
+        .cert-badge {
+            background: rgba(201,168,76,0.1);
+            color: var(--gold);
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 0.28rem 0.7rem;
+            border-radius: 9999px;
+            border: 1px solid rgba(201,168,76,0.25);
+        }
+
+        .cert-title {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+
+        .cert-issuer {
+            color: var(--gold);
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 0.35rem;
+        }
+
+        .cert-date {
+            color: var(--dark-muted);
+            font-size: 0.78rem;
+        }
+
+        body.light-mode .cert-date { color: var(--light-muted); }
+
+        /* ─── CONTACT ─────────────────────────────────── */
+        .contact-content {
+            max-width: 46rem;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-content h2 { margin-bottom: 1rem; }
+
+        .contact-description {
+            font-size: 1.05rem;
+            color: var(--dark-muted);
+            margin-bottom: 2.75rem;
+            line-height: 1.75;
+        }
+
+        body.light-mode .contact-description { color: var(--light-muted); }
+
+        .contact-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 2.75rem;
+        }
+
+        @media (min-width: 640px) {
+            .contact-buttons { flex-direction: row; }
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .contact-card {
+            background: var(--dark-card);
+            padding: 1.5rem;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--dark-border);
+            transition: border-color var(--transition);
+        }
+
+        .contact-card:hover { border-color: var(--dark-border-hi); }
+
+        body.light-mode .contact-card {
+            background: var(--light-card);
+            border-color: rgba(201,168,76,0.18);
+        }
+
+        .contact-card p:first-child {
+            color: var(--dark-muted);
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        body.light-mode .contact-card p:first-child { color: var(--light-muted); }
+
+        .contact-card strong { font-size: 0.88rem; }
+
+        /* ─── DOWNLOAD CV ─────────────────────────────── */
+        .download-section {
+            background: var(--dark-secondary);
+            border-top: 1px solid var(--dark-border);
+            border-bottom: 1px solid var(--dark-border);
+            padding: 4rem 1.5rem;
+        }
+
+        body.light-mode .download-section {
+            background: #EAECF0;
+            border-color: rgba(201,168,76,0.2);
+        }
+
+        .download-content {
+            max-width: 50rem;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+            text-align: center;
+        }
+
+        @media (min-width: 640px) {
+            .download-content {
+                flex-direction: row;
+                text-align: left;
+            }
+        }
+
+        .download-text { flex: 1; }
+
+        .download-text h4 {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 0.35rem;
+        }
+
+        .download-text p {
+            color: var(--dark-muted);
+            font-size: 0.875rem;
+        }
+
+        body.light-mode .download-text p { color: var(--light-muted); }
+
+        /* ─── FOOTER ──────────────────────────────────── */
+        footer {
+            background: var(--dark-secondary);
+            border-top: 1px solid var(--dark-border);
+            padding: 3rem 1.5rem 2.5rem;
+        }
+
+        body.light-mode footer {
+            background: #EAECF0;
+            border-color: rgba(201,168,76,0.18);
+        }
+
+        .footer-container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .footer-top {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--dark-border);
+        }
+
+        @media (min-width: 768px) {
+            .footer-top { flex-direction: row; }
+        }
+
+        .footer-brand h3 {
+            font-family: var(--font-display);
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 0.35rem;
+        }
+
+        .footer-brand p {
+            color: var(--dark-muted);
+            font-size: 0.82rem;
+            letter-spacing: 0.05em;
+        }
+
+        body.light-mode .footer-brand p { color: var(--light-muted); }
+
+        .footer-links {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .footer-links a {
+            color: var(--dark-muted);
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all var(--transition);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--dark-border);
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+            border-color: var(--gold);
+            background: var(--gold-glow);
+            transform: translateY(-2px);
+        }
+
+        body.light-mode .footer-links a {
+            color: var(--light-muted);
+            border-color: rgba(201,168,76,0.22);
+        }
+
+        .footer-bottom {
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            color: var(--dark-subtle);
+            font-size: 0.8rem;
+            line-height: 1.7;
+        }
+
+        body.light-mode .footer-bottom p { color: var(--light-muted); }
+
+        /* ─── SCROLL REVEAL ───────────────────────────── */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.65s cubic-bezier(0.22,1,0.36,1), transform 0.65s cubic-bezier(0.22,1,0.36,1);
+        }
+
+        .scroll-reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ─── SLIDE-IN ────────────────────────────────── */
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-24px); }
+            to   { opacity: 1; transform: translateX(0); }
+        }
+
+        .section-item {
+            animation: slideIn 0.6s cubic-bezier(0.22,1,0.36,1) forwards;
+        }
+
+        /* ─── MOBILE ──────────────────────────────────── */
+        @media (max-width: 640px) {
+            section { padding: 3.5rem 1rem; }
+
+            .hero { padding-top: 4.5rem; padding-bottom: 2.5rem; }
+
+            .hero h1 { font-size: 2rem; }
+
+            .experience-item { gap: 1rem; }
+            .experience-card { padding: 1.25rem; }
+
+            .projects-grid { grid-template-columns: 1fr; }
+            .skills-grid   { grid-template-columns: 1fr; }
+            .certifications-grid { grid-template-columns: 1fr; }
+            .contact-grid  { grid-template-columns: 1fr; }
+
+            .footer-top { flex-direction: column-reverse; }
+        }
+
+        /* ─── REDUCED MOTION ──────────────────────────── */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="container">
+            <div class="logo">Ramón<span style="opacity:0.5;font-weight:300;font-size:0.85em"> /</span> MKT</div>
+            <div class="nav-links">
+                <a href="#inicio">Inicio</a>
+                <a href="#experiencia">Experiencia</a>
+                <a href="#proyectos">Proyectos</a>
+                <a href="#contacto">Contacto</a>
+            </div>
+            <div class="mobile-menu">
+                <button class="theme-toggle" onclick="toggleTheme()">🫆</button>
+                <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <div class="hero-badge">📍 Mexicali, Baja California</div>
+            <h1>Transformo <span class="mint">marcas</span> en <span class="purple">resultados</span></h1>
+            <p>Especialista en estrategia digital, marketing de contenidos y posicionamiento de marca. Ayudo a empresas y agencias a conectar con su audiencia y acelerar su crecimiento.</p>
+            <div class="hero-buttons">
+                <a href="#proyectos" class="btn btn-primary">Ver mis proyectos →</a>
+                <a href="#contacto" class="btn btn-secondary">Contáctame</a>
+            </div>
+            <p class="hero-scroll-hint">↓ Scroll para conocer más</p>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experiencia">
+        <div class="container">
+            <span class="section-label">Trayectoria</span>
+            <h2>Experiencia</h2>
+            <div class="section-divider"></div>
+            <p>Mi recorrido en marketing y estrategia de marca</p>
+
+            <div class="experience-list">
+                <!-- Experience 1 -->
+                <div class="experience-item section-item">
+                    <div class="experience-timeline">
+                        <div class="timeline-dot">1</div>
+                        <div class="timeline-line"></div>
+                    </div>
+                    <div class="experience-card">
+                        <div class="experience-header">
+                            <div>
+                                <div class="experience-company">Kia Futura</div>
+                                <div class="experience-role">Practicante — Marketing Digital</div>
+                            </div>
+                            <div class="experience-year">2025</div>
+                        </div>
+                        <p class="experience-description">Estrategias de contenido digital para redes sociales. Análisis de métricas, edición audiovisual y organización de eventos.</p>
+                        <div class="achievements">
+                            <div class="achievements-label">Logros destacados</div>
+                            <ul class="achievements-list">
+                                <li><span>✓</span> Incremento 45% engagement</li>
+                                <li><span>✓</span> Evento "Mexi-Can Fest" coordinado</li>
+                                <li><span>✓</span> 3.2K followers generados</li>
+                            </ul>
+                        </div>
+                        <div class="tags">
+                            <span class="tag">Social Media</span>
+                            <span class="tag">Content Strategy</span>
+                            <span class="tag">Analytics</span>
+                            <span class="tag">Event Management</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience 2 -->
+                <div class="experience-item section-item">
+                    <div class="experience-timeline">
+                        <div class="timeline-dot">2</div>
+                        <div class="timeline-line"></div>
+                    </div>
+                    <div class="experience-card">
+                        <div class="experience-header">
+                            <div>
+                                <div class="experience-company">Agencia 3CINCO</div>
+                                <div class="experience-role">Publicista — Marketing & BTL</div>
+                            </div>
+                            <div class="experience-year">2023–2025</div>
+                        </div>
+                        <p class="experience-description">Diseño y ejecución de estrategias promocionales para empresas y franquicias. Activaciones de marca, marketing tradicional y digital.</p>
+                        <div class="achievements">
+                            <div class="achievements-label">Logros destacados</div>
+                            <ul class="achievements-list">
+                                <li><span>✓</span> 15+ campañas ejecutadas</li>
+                                <li><span>✓</span> Eventos: Caffenio, El Nido de los Águilas</li>
+                                <li><span>✓</span> Alianzas con microempresas locales</li>
+                            </ul>
+                        </div>
+                        <div class="tags">
+                            <span class="tag">BTL</span>
+                            <span class="tag">Event Marketing</span>
+                            <span class="tag">Brand Activation</span>
+                            <span class="tag">Digital Strategy</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience 3 -->
+                <div class="experience-item section-item">
+                    <div class="experience-timeline">
+                        <div class="timeline-dot">3</div>
+                    </div>
+                    <div class="experience-card">
+                        <div class="experience-header">
+                            <div>
+                                <div class="experience-company">Colaboraciones Múltiples</div>
+                                <div class="experience-role">Content & Marketing Specialist</div>
+                            </div>
+                            <div class="experience-year">2023–2025</div>
+                        </div>
+                        <p class="experience-description">Trabajo con EXE Inmobiliaria, Agencia Musical Piagon, Venus Dentistry y DSC/Flujo Digital.</p>
+                        <div class="achievements">
+                            <div class="achievements-label">Logros destacados</div>
+                            <ul class="achievements-list">
+                                <li><span>✓</span> 4 clientes diferentes</li>
+                                <li><span>✓</span> Meta Ads campaigns</li>
+                                <li><span>✓</span> Estrategias de posicionamiento</li>
+                                <li><span>✓</span> Análisis de comportamiento digital</li>
+                            </ul>
+                        </div>
+                        <div class="tags">
+                            <span class="tag">Marketing Digital</span>
+                            <span class="tag">Ads Management</span>
+                            <span class="tag">Branding</span>
+                            <span class="tag">Analytics</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects-bg" id="proyectos">
+        <div class="container">
+            <span class="section-label">Casos de Estudio</span>
+            <h2>Proyectos Destacados</h2>
+            <div class="section-divider"></div>
+            <p>Casos de estudio que demuestran mi expertise</p>
+
+            <div class="filters">
+                <button class="filter-btn active" onclick="filterProjects('all')">Todos</button>
+                <button class="filter-btn" onclick="filterProjects('academic')">Académicos</button>
+                <button class="filter-btn" onclick="filterProjects('professional')">Profesionales</button>
+            </div>
+
+            <div class="projects-grid" id="projectsGrid">
+                <!-- Projects will be inserted here by JavaScript -->
+            </div>
+
+            <div class="gallery-placeholder">
+                <div class="gallery-emoji">🎨</div>
+                <h4>Galería Visual</h4>
+                <p>Pronto: Capturas de campañas reales, diseños y resultados de analytics</p>
+                <p style="color: var(--dark-muted); font-size: 0.875rem;">Integrando contenido del Drive...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="habilidades">
+        <div class="container">
+            <span class="section-label">Competencias</span>
+            <h2>Habilidades</h2>
+            <div class="section-divider"></div>
+            <p>Competencias verificadas y certificadas</p>
+
+            <div class="skills-grid" id="skillsGrid">
+                <!-- Skills will be inserted here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section class="cert-bg">
+        <div class="container">
+            <span class="section-label">Formación</span>
+            <h2>Certificaciones</h2>
+            <div class="section-divider"></div>
+            <p>Formación continua y especialización profesional</p>
+
+            <div class="certifications-grid" id="certificationsGrid">
+                <!-- Certifications will be inserted here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto">
+        <div class="contact-content">
+            <span class="section-label">Contacto</span>
+            <h2>¿Hablamos?</h2>
+            <div class="section-divider" style="margin: 0 auto 2rem;"></div>
+            <p class="contact-description">Estoy abierto a oportunidades en agencias, empresas y proyectos especiales. Conectemos.</p>
+
+            <div class="contact-buttons">
+                <a href="mailto:jossueramon12@gmail.com" class="btn btn-primary">
+                    ✉️ Envía un email
+                </a>
+                <a href="https://www.linkedin.com/in/jossue-ramon-martinez-espinoza-b56731385" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                    🔗 LinkedIn
+                </a>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <p>📞 Teléfono</p>
+                    <strong>(686) 511-0497</strong>
+                </div>
+                <div class="contact-card">
+                    <p>📧 Email</p>
+                    <strong>jossueramon12@gmail.com</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download CV Section -->
+    <section class="download-section">
+        <div class="container">
+            <div class="download-content">
+                <div class="download-text">
+                    <h4>Descarga mi CV completo</h4>
+                    <p>Disponible en PDF con historial detallado</p>
+                </div>
+                <a href="#" class="btn btn-primary" onclick="downloadCV()">
+                    ⬇️ Descargar CV
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <h3>Ramón Espinoza</h3>
+                    <p>Mercadotecnia · Estrategia de Marca · Growth</p>
+                </div>
+                <div class="footer-links">
+                    <a href="https://www.linkedin.com/in/jossue-ramon-martinez-espinoza-b56731385" target="_blank" rel="noopener noreferrer" title="LinkedIn">🔗</a>
+                    <a href="mailto:jossueramon12@gmail.com" title="Email">✉️</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 Ramón Espinoza. Diseño web moderno y responsive. Basado en estrategia digital.<br>
+                Disponible para agencias y oportunidades de crecimiento.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Data
+        const projectsData = [
+            {
+                id: 1,
+                title: 'Bean Plant Based Food',
+                type: 'Investigación de Mercado',
+                category: 'academic',
+                emoji: '📊',
+                description: 'Estudio completo de segmentación y perfil del consumidor para restaurante vegano en Mexicali.',
+                results: [
+                    'Definición clara del perfil demográfico (21-35 años, 70% mujeres)',
+                    'Identificación de motivaciones principales (salud, ética animal)',
+                    'Recomendaciones estratégicas para posicionamiento'
+                ],
+                tools: ['Market Research', 'Data Analysis', 'Consumer Insights']
+            },
+            {
+                id: 2,
+                title: 'Huellitas Mxcl',
+                type: 'Análisis Estratégico & Makeover',
+                category: 'academic',
+                emoji: '🐾',
+                description: 'Investigación y propuesta de transformación de comunicación para refugio de animales con modelo de negocio social.',
+                results: [
+                    'Estrategia de sostenibilidad económica identificada',
+                    'Propuesta de servicios generadores de ingresos (hotel canino)',
+                    'Plan integral de comunicación digital'
+                ],
+                tools: ['Strategic Analysis', 'Business Model', 'Social Media Strategy']
+            },
+            {
+                id: 3,
+                title: 'Kia Futura - Content Strategy',
+                type: 'Estrategia de Contenido Digital',
+                category: 'professional',
+                emoji: '🎬',
+                description: 'Desarrollo de calendarios de contenido, edición audiovisual y análisis de desempeño en redes sociales.',
+                results: [
+                    'Calendario de contenido trimestral',
+                    'Análisis de engagement y CTR',
+                    'Reportes de desempeño mensual'
+                ],
+                tools: ['Content Planning', 'Video Editing', 'Analytics']
+            },
+            {
+                id: 4,
+                title: 'Agencia 3CINCO - Activaciones',
+                type: 'Estrategia de Activación de Marca',
+                category: 'professional',
+                emoji: '🎯',
+                description: 'Ejecución de campañas promocionales y activaciones para múltiples empresas y franquicias.',
+                results: [
+                    '15+ activaciones diseñadas',
+                    'Gestión logística integral',
+                    'Impacto en visibilidad de marca'
+                ],
+                tools: ['Event Planning', 'Brand Activation', 'Marketing Execution']
+            }
+        ];
+
+        const skillsData = {
+            'Marketing Digital': ['SEO/SEM', 'Social Media Management', 'Content Strategy', 'Email Marketing', 'Analytics'],
+            'Estrategia': ['Posicionamiento de marca', 'Investigación de mercado', 'Consumer Insights', 'Business Strategy', 'Propuestas de valor'],
+            'Herramientas': ['Meta Ads', 'Google Analytics', 'Canva', 'CapCut', 'Adobe Básico', 'Excel Avanzado', 'HubSpot'],
+            'Soft Skills': ['Análisis crítico', 'Comunicación profesional', 'Gestión de proyectos', 'Trabajo en equipo', 'Resolución de problemas']
+        };
+
+        const certificationsData = [
+            {
+                title: 'Marketing Digital',
+                issuer: 'HubSpot Academy',
+                date: 'Completado Mayo 2025',
+                emoji: '📧',
+                badge: 'Verificado'
+            },
+            {
+                title: 'El Camino del Inversor: Método, Fundamentos de Inversión y Riesgo',
+                issuer: 'Santander Open Academy',
+                date: 'Completado 2025',
+                emoji: '💰',
+                badge: 'Verificado'
+            },
+            {
+                title: 'Excel Avanzado',
+                issuer: 'Santander Open Academy',
+                date: 'Completado Junio 2026',
+                emoji: '📊',
+                badge: 'Nuevo'
+            },
+            {
+                title: 'Inglés Técnico',
+                issuer: 'Facultad de Idiomas UABC',
+                date: 'Completado',
+                emoji: '🌐',
+                badge: 'Egresado'
+            }
+        ];
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProjects('all');
+            renderSkills();
+            renderCertifications();
+            setupScrollAnimations();
+            setupTheme();
+        });
+
+        // Functions
+        function toggleTheme() {
+            document.body.classList.toggle('light-mode');
+            const isDark = !document.body.classList.contains('light-mode');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        }
+
+        function setupTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                document.body.classList.add('light-mode');
+                document.querySelector('.theme-toggle').textContent = '🌙';
+            }
+        }
+
+        function toggleMenu() {
+            // Mobile menu functionality can be added here
+        }
+
+        function filterProjects(category) {
+            renderProjects(category);
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+        }
+
+        function renderProjects(category) {
+            const grid = document.getElementById('projectsGrid');
+            const filtered = category === 'all' 
+                ? projectsData 
+                : projectsData.filter(p => p.category === category);
+
+            grid.innerHTML = filtered.map(project => `
+                <div class="project-card">
+                    <div class="project-emoji">${project.emoji}</div>
+                    <div class="project-type">${project.type}</div>
+                    <h3>${project.title}</h3>
+                    <p class="project-description">${project.description}</p>
+                    <div class="project-results">
+                        <div class="project-results-label">Resultados:</div>
+                        <ul class="project-results-list">
+                            ${project.results.map(r => `<li><span>→</span> ${r}</li>`).join('')}
+                        </ul>
+                    </div>
+                    <div class="project-tools">
+                        ${project.tools.map(tool => `<span class="tool-tag">${tool}</span>`).join('')}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function renderSkills() {
+            const grid = document.getElementById('skillsGrid');
+            grid.innerHTML = Object.entries(skillsData).map(([category, skills]) => `
+                <div class="skill-category">
+                    <h3>${category}</h3>
+                    ${skills.map((skill, idx) => {
+                        const width = 75 + Math.random() * 25;
+                        return `
+                            <div class="skill-item">
+                                <div class="skill-name">${skill}</div>
+                                <div class="skill-bar">
+                                    <div class="skill-fill" style="--skill-width: ${width}%"></div>
+                                </div>
+                            </div>
+                        `;
+                    }).join('')}
+                </div>
+            `).join('');
+        }
+
+        function renderCertifications() {
+            const grid = document.getElementById('certificationsGrid');
+            grid.innerHTML = certificationsData.map(cert => `
+                <div class="cert-card">
+                    <div class="cert-header">
+                        <span class="cert-emoji">${cert.emoji}</span>
+                        <span class="cert-badge">${cert.badge}</span>
+                    </div>
+                    <h4 class="cert-title">${cert.title}</h4>
+                    <p class="cert-issuer">${cert.issuer}</p>
+                    <p class="cert-date">${cert.date}</p>
+                </div>
+            `).join('');
+        }
+
+        function setupScrollAnimations() {
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.experience-item, .project-card, .skill-category, .cert-card').forEach(el => {
+                el.classList.add('scroll-reveal');
+                observer.observe(el);
+            });
+        }
+
+        function downloadCV() {
+            alert('El CV estará disponible pronto. Por ahora, puedes contactarme directamente en jossueramon12@gmail.com');
+        }
+    </script>
+</body>
+</html>
